@@ -115,10 +115,10 @@
         </div>
        
         <!-- Desktop Image (screens 768px and up) -->
-        <img src="{{ asset('images/desktop2.png') }}" class="img-fluid d-none d-md-block w-100" style="object-fit: cover; height: 100%;" alt="Desktop Banner">
+        <img src="{{ asset('images/desktop3.png') }}" class="img-fluid d-none d-md-block w-100" style="object-fit: cover; height: 100%;" alt="Desktop Banner">
         
         <!-- Mobile Image (screens under 768px) -->
-        <img src="{{ asset('images/mobile.png') }}" class="img-fluid d-block d-md-none w-100" style="object-fit: cover; height: 100%;" alt="Mobile Banner">
+        <img src="{{ asset('images/mobile2.png') }}" class="img-fluid d-block d-md-none w-100" style="object-fit: cover; height: 100%;" alt="Mobile Banner">
 
     
     </div>

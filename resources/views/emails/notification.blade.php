@@ -22,7 +22,7 @@
             overflow: hidden;
         }
         .header {
-            background-color: #fe0505db;
+            background-color: #c40000;
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -104,7 +104,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="{{ asset('/images/nobg20.png') }}" alt="turns20-logo" class="product-img" height="100" width="100">
+            <img src="{{ asset('/images/nobg20.png') }}" alt="turns20-logo" class="product-img" height="120" width="150">
             <h1>{{ config('app.name') }} NOTIFICATION</h1>
         </div>
 

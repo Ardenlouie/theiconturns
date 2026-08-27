@@ -42,7 +42,7 @@ class RegisterNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $subject = "THE ICON TURNS 20 | kojie.san - ".$this->rsvp->name;
+        $subject = "THE ICON TURNS 20 - ".$this->rsvp->name;
         $greeting = "Dear, {$notifiable->name}";
 
         if($this->rsvp->attending == 'YES'){

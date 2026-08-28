@@ -121,11 +121,11 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'images/JM Starter.png',
+            'path' => 'images/kojiesan.png',
             'alt' => 'AdminLTE Preloader Image',
-            'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'effect' => 'animation__wobble',
+            'width' => 200,
+            'height' => 200,
         ],
     ],
 
@@ -163,8 +163,8 @@ return [
     'layout_topnav' => null,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => false,
-    'layout_fixed_navbar' => true,
-    'layout_fixed_footer' => true,
+    'layout_fixed_navbar' => false,
+    'layout_fixed_footer' => false,
     'layout_dark_mode' => false,
 
     /*
@@ -321,6 +321,14 @@ return [
             'icon' => 'fas fa-fw fa-robot',
             'can' => 'ai access',
             'active' => ['ai-testing'],
+        ] : null,
+
+        env('FEATURE_RESPONSES', true) ? [
+            'text' => 'Invites',
+            'url' => 'invites',
+            'icon' => 'fas fa-fw fa-user-plus',
+            'can' => 'user access',
+            'active' => ['invites', 'invite*'],
         ] : null,
 
         [

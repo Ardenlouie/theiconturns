@@ -13,6 +13,7 @@ use App\Http\Controllers\SystemLogController;
 use App\Http\Controllers\SystemSettingController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InviteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterInviteController;
 
@@ -133,6 +134,14 @@ Route::group(['middleware' => ['auth', 'optimizeImages']], function () {
 
         Route::get('user/{id}/edit', [UserController::class, 'edit'])->name('user.edit')->middleware('permission:user edit');
         Route::post('user/{id}', [UserController::class, 'update'])->name('user.update')->middleware('permission:user edit');
+    });
+
+    // INVITES ROUTES
+    Route::group(['middleware' => 'permission:user access'], function () {
+        Route::get('invites', [InviteController::class, 'index'])->name('invite.index');
+        Route::get('invite/show/{id}', [InviteController::class, 'show'])->name('invite.show');
+        Route::post('invite/update/{id}', [InviteController::class, 'update'])->name('invite.update');
+        Route::get('invite/export', [InviteController::class, 'export'])->name('invite.export');
     });
 
     // SYSTEM SETTING

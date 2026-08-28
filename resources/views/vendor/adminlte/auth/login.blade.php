@@ -39,11 +39,16 @@
 @section('auth_header', __('adminlte::adminlte.login_message'))
 
 @section('auth_body')
+
+    
+<div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="card border-0 shadow-sm bg-white rounded-4 p-4 p-md-5">
     <div class="login-welcome">
-        <h2>Welcome back</h2>
+        <h2>THE ICON TURNS 20</h2>
         <p>Sign in to continue to your account</p>
     </div>
-
     <form action="{{ $login_url }}" method="post">
         @csrf
 
@@ -86,7 +91,7 @@
         </div>
 
         {{-- Server type --}}
-        <div class="login-field-group">
+        <div class="login-field-group" hidden>
             <label>Server</label>
             <div class="input-group">
                 <select name="type" class="form-control @error('type') is-invalid @enderror">
@@ -127,6 +132,11 @@
         </button>
 
     </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @stop
 
 @section('auth_footer')

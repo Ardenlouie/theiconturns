@@ -176,8 +176,13 @@
 {{-- Setup Custom Preloader Content --}}
 
 @section('preloader')
-    <i class="fas fa-atom fa-spin fa-10x text-primary"></i>
-    <h3 class="mt-3 text-secondary">Please wait...</h3>
+    <img src="{{ asset(config('adminlte.preloader.img.path', 'vendor/adminlte/dist/img/AdminLTELogo.png')) }}"
+             class="img-circle {{ config('adminlte.preloader.img.effect', 'animation__shake') }}"
+             alt="{{ config('adminlte.preloader.img.alt', 'AdminLTE Preloader Image') }}"
+             width="{{ config('adminlte.preloader.img.width', 100) }}"
+             height="{{ config('adminlte.preloader.img.height', 100) }}"
+             style="animation-iteration-count:infinite;">
+    <!-- <h3 class="mt-3 text-secondary">Please wait...</h3> -->
 @stop
 
 {{-- plugins --}}
@@ -225,6 +230,71 @@
         });
     });
 
+</script>
+<script>
+    $(function() {
+        $('body').on('click', '.btn-approve', function(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: "Final Confirmation",
+                text: "Are you sure you want to confirm this RSVP?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#0ba236",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, confirm it!",
+                cancelButtonText: "No",
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                    allowOutsideClick: false,
+                    title: "Confirmed!",
+                    text: "RSVP has been confirmed.",
+                    icon: "success"
+                    });
+
+                    Swal.showLoading();
+                    $('#confirm').val('1');
+                    $('#confirming').submit();
+
+                }
+                });
+        });
+    });
+</script>
+
+<script>
+$(function() {
+    $('body').on('click', '.btn-decline', function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: "Final Confirmation",
+            text: "Are you sure you want to decline this RSVP?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0ba236",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, decline it!",
+            cancelButtonText: "No",
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                allowOutsideClick: false,
+                title: "Declined!",
+                text: "RSVP has been declined.",
+                icon: "success"
+                });
+
+                Swal.showLoading();
+                $('#confirm').val('0');
+                $('#confirming').submit();
+
+            }
+            });
+    });
+});
 </script>
 @endpush
 

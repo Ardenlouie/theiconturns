@@ -24,13 +24,6 @@
 @section('auth_header', __(''))
 
 @section('auth_body')
-@if(session()->has('message_error'))
-    <div class="alert alert-danger" role="alert">
-        <i class="fa fa-exclamation mr-1"></i> Error!
-        <br>
-        {{session('message_error')}}
-    </div>
-@endif
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-8 col-lg-8">
@@ -43,6 +36,13 @@
 
                         <p class="text-muted small">Please fill in your details below.</p>
                     </div> -->
+                    @if(session()->has('message_error'))
+                        <div class="alert alert-danger" role="alert">
+                            <i class="fa fa-exclamation mr-1"></i> Error!
+                            <br>
+                            {{session('message_error')}}
+                        </div>
+                    @endif
 
                     <form method="POST" action="{{ route('register-invite') }}" id="confirm">
                         @csrf

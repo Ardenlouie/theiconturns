@@ -26,5 +26,6 @@ class RegisterInvite extends Model
         'title',
         'notes',
         'attending',
+        'confirm',
     ];
 }

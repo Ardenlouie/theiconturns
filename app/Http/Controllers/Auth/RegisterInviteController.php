@@ -13,6 +13,7 @@ use App\Http\Requests\RegisterInviteRequest;
 
 use Illuminate\Notifications\Notification;
 use App\Notifications\RegisterNotification;
+use App\Notifications\IconNotification;
 
 class RegisterInviteController extends Controller
 {
@@ -90,6 +91,13 @@ class RegisterInviteController extends Controller
         $rsvp->save();
 
         $rsvp_id = encrypt($rsvp->id);
+        
+        $icon = User::where('email', 'theiconturns20@kojiesan.com')->first();
+        // $icon = User::where('email', 'ardenlouie.giron@kojiesan.com')->first();
+
+        if (!empty($icon)) {
+            $icon->notify(new IconNotification($rsvp));
+        }
 
         $rsvp->notify(new RegisterNotification($rsvp));
 

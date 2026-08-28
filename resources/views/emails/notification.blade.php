@@ -83,7 +83,7 @@
             background-color: #f9f9f9;
         }
         .button {
-            background-color: #001f3f; /* Theme button color */
+            background-color: #9e0000; /* Theme button color */
             color:rgb(255, 255, 255) !important; /* Light text for contrast, !important for email clients */
             padding: 12px 25px; /* Adjusted padding */
             text-decoration: none;
@@ -121,12 +121,15 @@
                     @endforeach
                 </p>
                 <br>
+                @if(!empty($url))
+                    <a href="{{ $url }}" class="button">View RSVP</a>
+                @endif
                 <br>
                     @foreach($outroLines ?? [] as $line)
                         <h3>{!! $line !!}</h3>
                     @endforeach
                 <br>
-
+                
                 <p>Thank you, </p>
                 <img src="{{ asset('/images/kojiesan.png') }}" alt="kojiesan-logo" class="product-img" height="100" width="100">
 

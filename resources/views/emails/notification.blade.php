@@ -104,7 +104,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="{{ asset('/images/nobg20.png') }}" alt="turns20-logo" class="product-img" height="120" width="150">
+            <img src="{{ asset('/images/nobg20.png') }}" alt="turns20-logo" class="product-img" height="120" width="160">
         </div>
 
         <div class="content">

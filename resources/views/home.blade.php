@@ -10,7 +10,13 @@
 @endsection
 
 @section('content_body')
-
+<div class="col-lg-12 text-center">
+    <a href="{{ url('/invites') }}" class="btn btn-primary btn-xl">
+        <h1><i class="fas fa-user-plus"></i>
+            INVITES
+        </h1>
+    </a>
+</div>
 @stop
 
 {{-- Push extra CSS --}}

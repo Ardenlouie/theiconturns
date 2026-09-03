@@ -46,7 +46,7 @@ class RegisterNotification extends Notification
         $greeting = "Dear, {$notifiable->name}";
 
         if($this->rsvp->attending == 'YES'){
-            $introLines = ["Your RSVP has been received. Thank you for joining us, and we look forward to a great session."];
+            $introLines = ["Your RSVP is in! We’ve received your response and can’t wait to celebrate with you. Keep an eye on your inbox for your official confirmation details—see you soon!"];
         } else {
             $introLines = ["Thank you for letting us know of your absence. We appreciate your response and hope to see you at a future event."];
 

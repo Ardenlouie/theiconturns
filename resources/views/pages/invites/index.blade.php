@@ -79,8 +79,10 @@
                     </div>
                 </div>
                 <div class="col-lg-4 ">
-                    <a href="{{ route('invite.export') }}" class="btn btn-success fw-semibold float-right">
-                        <i class="bi bi-file-earmark-excel me-1"></i> Export to Excel
+                    <a href="{{ asset('uploads/RSVP-refreshable.xlsx') }}" 
+                        download="RSVP-refreshable.xlsx" 
+                        class="btn btn-success float-right">
+                        <i class="fa fa-file-export"></i> Export To Excel(Refreshable)
                     </a>
                 </div>
             </div>

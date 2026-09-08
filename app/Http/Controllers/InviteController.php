@@ -66,6 +66,7 @@ class InviteController extends Controller
 
         $invite->update([
             'confirm' => $request->confirm,
+            'contact_person' => $request->contact_person,
             'seats' => $request->seats,
         ]);
     

@@ -288,7 +288,7 @@
                     });
 
                     Swal.showLoading();
-                    $('#confirm').val("");
+
                     $('#confirming').submit();
 
                 }

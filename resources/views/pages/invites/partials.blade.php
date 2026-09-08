@@ -47,12 +47,12 @@
                 </td>
                 <td class="align-middle text-right p-0 pr-1">
                     @if($invite->attending == 'YES')
-                        <a href="#" title="confirm" data-id="{{$invite->id}}" class="btn btn-confirm btn-success btn-xs mb-0 ml-0">
-                            <i class="fa fa-pen-alt"></i> CONFIRM
+                        <a href="#" title="confirm" data-id="{{$invite->id}}" class="btn btn-confirm btn-primary btn-xs mb-0 ml-0">
+                            <i class="fa fa-eye"></i> VIEW
                         </a>
                     @endif
-                    <a href="{{ route('invite.show', encrypt($invite->id)) }}" title="show" class="btn bg-primary btn-xs mb-0 ml-0">
-                        <i class="fa fa-eye"></i> SHOW
+                    <a href="{{ route('invite.show', encrypt($invite->id)) }}" title="show" class="btn bg-orange btn-xs mb-0 ml-0">
+                        <i class="fa fa-list"></i> SHOW
                     </a>
                     
                 </td>

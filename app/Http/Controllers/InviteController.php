@@ -66,8 +66,9 @@ class InviteController extends Controller
 
         $invite->update([
             'confirm' => $request->confirm,
+            'seats' => $request->seats,
         ]);
-
+    
         $changes_arr['changes'] = $invite->getChanges();
 
         // logs

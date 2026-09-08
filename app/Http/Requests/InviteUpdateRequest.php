@@ -23,9 +23,7 @@ class InviteUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'confirm' => [
-                'required',
-            ], 
+            
         ];
     }
 }

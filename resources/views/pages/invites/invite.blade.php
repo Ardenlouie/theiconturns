@@ -28,7 +28,13 @@
                 <div class="col-12">
                     <h4>Company: <b>{{ ($rsvp->company ?? '' )}}</b></h4>
                     <h4>Position / Title: <b>{{ ($rsvp->title ?? '' )}}</b></h4>
-                    <h4>Contact Person: <b>{{ ($rsvp->contact_person ?? '' )}}</b></h4>
+                    <h4>Contact Person: </h4>
+                    <div class="col-lg-6">
+                        <input type="text" 
+                            class="form-control" 
+                            name="contact_person" 
+                            form="confirming" value="{{$rsvp->contact_person}}">
+                    </div>
                     <h4>Notes: <b>{{ ($rsvp->notes ?? '' )}}</b></h4>
                     <h4>No. of Seat/s: </h4>
                     <div class="col-lg-3">
@@ -42,7 +48,7 @@
             </div>
             <div class="col-12 text-center  mb-3">
                     <div class="form-group">
-                        <input type="hidden" id="confirm" name="confirm" form="confirming" value="0">
+                        <input type="hidden" id="confirm" name="confirm" form="confirming" value="{{$rsvp->confirm}}">
 
                         <a href="#" title="update" class="btn-update btn bg-primary btn-lg">UPDATE</a><br><br>
                         @if(is_null($rsvp->confirm))

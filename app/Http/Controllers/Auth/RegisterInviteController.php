@@ -85,6 +85,7 @@ class RegisterInviteController extends Controller
             'control_number' => $request->control_number,
             'company' => $request->company,
             'title' => $request->title,
+            'contact_person' => $request->contact_person,
             'notes' => $request->notes,
             'attending' => $request->attending,
         ]);

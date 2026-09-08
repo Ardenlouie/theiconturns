@@ -265,6 +265,39 @@
 </script>
 
 <script>
+    $(function() {
+        $('body').on('click', '.btn-update', function(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: "Final Confirmation",
+                text: "Are you sure you want to update this RSVP?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#0ba236",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, update it!",
+                cancelButtonText: "No",
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                    allowOutsideClick: false,
+                    title: "Confirmed!",
+                    text: "RSVP has been updated.",
+                    icon: "success"
+                    });
+
+                    Swal.showLoading();
+                    $('#confirm').val("");
+                    $('#confirming').submit();
+
+                }
+                });
+        });
+    });
+</script>
+
+<script>
 $(function() {
     $('body').on('click', '.btn-decline', function(e) {
         e.preventDefault();

@@ -97,6 +97,15 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+                        
+                        <!-- Name -->
+                        <div class="form-floating mb-3">
+                            <label class="mb-0">BEVI Contact Person: <small class="text-danger font-italic text-bold">(required)</small></label>
+                            <input type="text" class="form-control @error('contact_person') is-invalid @enderror" id="contact_person" name="contact_person" placeholder="Name of Contact Person" value="{{ old('contact_person') }}" required>
+                            @error('contact_person')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <!-- Notes -->
                         <div class="form-floating mb-4">

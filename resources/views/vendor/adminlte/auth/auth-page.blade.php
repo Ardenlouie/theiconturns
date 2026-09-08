@@ -109,16 +109,16 @@
     <div class="w-100" style=" overflow: hidden;">
 
         <div class="position-absolute top-0 start-0 w-100 h-100 d-none d-md-block" style="
-            background: radial-gradient(circle at center, transparent 60%, rgba(253, 253, 253, 0.95) 80%);
+            background: radial-gradient(circle at center, transparent 60%, rgba(253, 253, 253, 0.95) 95%);
             pointer-events: none;
             z-index: 2;">
         </div>
        
         <!-- Desktop Image (screens 768px and up) -->
-        <img src="{{ asset('images/desktop5.png') }}" class="img-fluid d-none d-md-block w-100" style="object-fit: cover; height: 100%;" alt="Desktop Banner">
+        <img src="{{ asset('images/desktop6.png') }}" class="img-fluid d-none d-md-block w-100" style="object-fit: cover; height: 100%;" alt="Desktop Banner">
         
         <!-- Mobile Image (screens under 768px) -->
-        <img src="{{ asset('images/mobile4.png') }}" class="img-fluid d-block d-md-none w-100" style="object-fit: cover; height: 100%;" alt="Mobile Banner">
+        <img src="{{ asset('images/mobile5.png') }}" class="img-fluid d-block d-md-none w-100" style="object-fit: cover; height: 100%;" alt="Mobile Banner">
 
     
     </div>

@@ -4,8 +4,10 @@
             <th>{{__('Name')}}</th>
             <th>{{__('Email')}}</th>
             <th>{{__('Date Submitted')}}</th>
+            <th>{{__('Contact Person')}}</th>
             <th>{{__('Attendance')}}</th>
             <th>{{__('Confirmation')}}</th>
+            <th>{{__('Seats')}}</th>
             <th></th>
         </tr>
     </thead>
@@ -22,6 +24,9 @@
                     {{ date('F d, Y', strtotime($invite->created_at ?? '')) }}
                 </td>
                 <td class="align-middle text-center">
+                    {{$invite->contact_person}}
+                </td>
+                <td class="align-middle text-center">
                     @if($invite->attending == 'YES')
                         <span class="badge badge-success"><b>YES</b></span>
                     @else
@@ -36,6 +41,9 @@
                     @elseif($invite->confirm == 1)
                         <span class="badge badge-success"><b>CONFIRMED GUEST</b></span>
                     @endif
+                </td>
+                <td class="align-middle text-center">
+                    {{$invite->seats}}
                 </td>
                 <td class="align-middle text-right p-0 pr-1">
                     @if($invite->attending == 'YES')
